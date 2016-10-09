@@ -22,8 +22,19 @@ var config = {};
 
 
 chrome.extension.onRequest.addListener( function(request, sender, sendResponse) {
-  console.log('Background.js, onRequest function: ')
-  console.log(request);
-  console.log(sender);
-  sendResponse({sender: 'background.js'})
+  // console.log('Background.js, onRequest function: ')
+  // console.log(request);
+  // console.log(sender);
+  // sendResponse({sender: 'background.js'})
+  if (request.code) {
+    sendResponse({result: eval(request.code)});
+  }
+
 });
+
+
+// Set default code
+if (!localStorage.getItem('Code')) {
+  localStorage.setItem('Code', 'alert("title:" + document.title + ". This alert is comes from chrome-extension-tools.")');
+}
+

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Quick Start</title>
+    <title>Tools</title>
     <style>
       button,.btn {
         width: 11em;
@@ -25,13 +25,22 @@
       .btn + .btn {
         margin-top: 15px;
       }
+      label {
+        font-size: 16px;
+        line-height: 40px;
+      }
+      label > input.ui-switch {
+        vertical-align: -51%;
+        margin-left: 10px;
+      }
     </style>
-
+    <link rel="stylesheet" type="text/css" href="../lib/css/ui-switch.css" >
   </head>
   <body>
-    <button id='btnRunCodeOnExtension'>在插件环境运行代码</button>
-    <button id='btnRunCodeOnPage'>在页面环境运行代码</button>
-    <button id='btnOptions'>打开配置页面</a>
+    <label id='code'>
+      Javascript<input class='ui-switch' type="checkbox" name="">
+    </label>
+    <button id='btnOptions'>Setting</a>
     <script src='popup.js'></script>
   </body>
 </html>
